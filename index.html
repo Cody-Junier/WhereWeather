@@ -33,28 +33,23 @@
                <input id="City" class="col-12"> </input>
                <button id="btn" type="submit" class="btn btn-primary col-12 mt-1">Submit</button>
                <container id="history">
-                 <button class="mt-1 col-12">Nashville, etc</button>
                </container>
             </div>
             <div class="col-9">
                 <h2 class= "text-center">Results:</h2>
                 <container>
                   <div id="CurrentWeather" class="card">
-                    <h2>Nashville <span id="currentIcon"></span></h2>
-                    <p>Temp:</p>
-                    <p>Wind:</p>
-                    <p>Humidity:</p>
-                    <p>UV Index:</p>
+                    <h2 id="CitySearch">Nashville <img src=http://openweathermap.org/img/w/10d.png></h2>
+                    <p id="Temp">Temp:</p>
+                    <p id="Wind">Wind:</p>
+                    <p id="Humidity">Humidity:</p>
+                    <p id="uv">UV Index:</p>
                   </div>
-                  <container id="fiveday"> 
+                  <container> 
                     <h2 class="">5-Day Forecast:</h2>
-                    <div class="flex-wrap row justify-content-around">
-                    <div class="card col-2">D1</div>
-                    <div class="card col-2">D2</div>
-                    <div class="card col-2">D3</div>
-                    <div class="card col-2">D4</div>
-                    <div class="card col-2">D5</div>
-                    </div>
+                    <container id="fiveday"  class="flex-wrap row justify-content-between">
+                    
+                    </container>
                   </container>
                 </container>
             </div>   
