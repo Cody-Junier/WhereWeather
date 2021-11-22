@@ -11,12 +11,8 @@ var currentHumidity = document.querySelector("#Humidity")
 var currentuv = document.querySelector("#uv")
 var historyContainer = document.querySelector("#history");
 var fiveDayHeader = document.querySelector("#fivedayh2");
-console.log(searchInput.textContent)
-console.log(getBtn)
-console.log(currentWeatherEl)
-console.log(forecastEl)
 var cityArray=JSON.parse(localStorage.getItem("History")) ||[];
-console.log(cityArray);
+
 
 
 function callInputAPI(city){
@@ -43,7 +39,6 @@ function callInputAPI(city){
         var dateMilisecs= dateUnix*1000;
         var dateObject = new Date(dateMilisecs);
         var dateNormal= dateObject.toLocaleString();
-        console.log(dateNormal)
         var iconSource="http://openweathermap.org/img/w/"+ iconCode+ ".png";
         var imgIcon = document.createElement('img');
         imgIcon.src = iconSource;
@@ -61,6 +56,8 @@ function callInputAPI(city){
             currentuv.textContent = "UV Index: "+data2.current.uvi;
             fiveDayHeader.classList.remove("d-none")
             var dailyData = data2.daily;
+            forecastEl.innerHTML=""
+            searchInput.value=""
             for (let i = 0; i < dailyData.length; i++) {
                 const element = dailyData[i];
                     if(i>0 && i<6){
@@ -90,6 +87,7 @@ function callInputAPI(city){
                         div.appendChild(humidity);
                         forecastEl.appendChild(div);
                     }};
+                    
         })
            
     })
